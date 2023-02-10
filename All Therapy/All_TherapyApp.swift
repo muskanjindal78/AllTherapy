@@ -11,7 +11,7 @@ import SwiftUI
 struct All_TherapyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppTabbarView()
         }
     }
 }
