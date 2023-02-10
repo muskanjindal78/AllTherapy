@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var showDrawer: Bool
     var body: some View {
-        Text("Home Page!")
+        VStack {
+            HeaderView(showDrawer: $showDrawer)
+            Text("Home Page!")
+            Spacer()
+        }
     }
 }

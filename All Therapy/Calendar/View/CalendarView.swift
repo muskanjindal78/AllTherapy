@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @Binding var showDrawer: Bool
     var body: some View {
-        Text("Calendar View!")
-    }
-}
-
-struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView()
+        VStack {
+            HeaderView(showDrawer: $showDrawer)
+            Text("Calendar View!")
+            Spacer()
+        }
     }
 }

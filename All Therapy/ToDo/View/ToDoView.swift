@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ToDoView: View {
+    @Binding var showDrawer: Bool
     var body: some View {
-        Text("To Do View!")
-    }
-}
-
-struct ToDoView_Previews: PreviewProvider {
-    static var previews: some View {
-        ToDoView()
+        VStack {
+            HeaderView(showDrawer: $showDrawer)
+            Text("To Do View!")
+            Spacer()
+        }
     }
 }

@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Binding var showDrawer: Bool
     var body: some View {
-        Text("Profile View!")
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+        VStack {
+            HeaderView(showDrawer: $showDrawer)
+            Text("Profile View!")
+            Spacer()
+        }
     }
 }

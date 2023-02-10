@@ -23,6 +23,7 @@
 		4385740529957C2C009A9AC2 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385740429957C2C009A9AC2 /* APIModel.swift */; };
 		4385740729958056009A9AC2 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385740629958056009A9AC2 /* ImageLoader.swift */; };
 		4385740929958124009A9AC2 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385740829958124009A9AC2 /* ImageView.swift */; };
+		4385740B2996075D009A9AC2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385740A2996075D009A9AC2 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		4385740429957C2C009A9AC2 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		4385740629958056009A9AC2 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		4385740829958124009A9AC2 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		4385740A2996075D009A9AC2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				4385740129957A48009A9AC2 /* Constants.swift */,
 				4385740629958056009A9AC2 /* ImageLoader.swift */,
 				4385740829958124009A9AC2 /* ImageView.swift */,
+				4385740A2996075D009A9AC2 /* HeaderView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				438573E92995703C009A9AC2 /* CalendarView.swift in Sources */,
 				438573F9299572DA009A9AC2 /* Color.swift in Sources */,
 				438573FD299578ED009A9AC2 /* SearchViewModel.swift in Sources */,
+				4385740B2996075D009A9AC2 /* HeaderView.swift in Sources */,
 				438573F3299570A1009A9AC2 /* ToDoView.swift in Sources */,
 				438573D429956CD7009A9AC2 /* All_TherapyApp.swift in Sources */,
 				4385740929958124009A9AC2 /* ImageView.swift in Sources */,

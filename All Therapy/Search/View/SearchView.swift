@@ -9,29 +9,26 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject var searchViewModel = SearchViewModel()
+    @Binding var showDrawer: Bool
     
     var body: some View {
         VStack {
-            VStack {
-                Text("Header")
-                Spacer()
-            }
-            .frame(width: UIScreen.main.bounds.width, height: 80)
-            .background(Color.BackgroundColor)
+            HeaderView(showDrawer: $showDrawer)
             Text("Select a Therapy")
             ScrollView(showsIndicators: false) {
                 if let tempTherapyList = searchViewModel.therapyList, let therapyList = filterActiveTherapyList(tempTherapyList) {
                     let rowCount = (Double(therapyList.count) / Double(3)).rounded(.up)
                     ForEach(0..<Int(rowCount), id: \.self) { row in
-                        VStack(){
+                        VStack{
                             HStack() {
                                 ForEach(0..<3, id: \.self) { column in
                                     let index = row * 3 + column
                                     if index < therapyList.count {
                                         NavigationLink(destination: EmptyView()) {
                                             ZStack {
-                                                ImageView(withURL: therapyList[index].profile ?? "")
-                                                    .cornerRadius(15)
+                                                VStack(alignment: .center, spacing: 10) {
+                                                    ImageView(withURL: therapyList[index].profile ?? "")
+                                                }
                                                 VStack {
                                                     Spacer()
                                                     if let name = therapyList[index].name as? String {
@@ -48,7 +45,6 @@ struct SearchView: View {
                                 }
                             }
                             .frame(width: UIScreen.main.bounds.width)
-//                            .fixedSize(horizontal: false, vertical: true)
                         }
                         .scaledToFit()
                     }

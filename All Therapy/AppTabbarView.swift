@@ -11,7 +11,6 @@ struct AppTabbarView: View {
     
     @SwiftUI.State var selectedIndex = 3
     @SwiftUI.State var showDrawer = false
-    var drawerContent: ( ()->() ) = {}
     
     init() {
         UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance.init(idiom: .unspecified)
@@ -24,31 +23,50 @@ struct AppTabbarView: View {
         NavigationView {
             ZStack {
                 TabView(selection: $selectedIndex) {
-                    HomeView()
+                    HomeView(showDrawer: $showDrawer)
                         .tabItem {
                             Image(systemName: "house")
                         }
                         .tag(1)
-                    CalendarView()
+                    CalendarView(showDrawer: $showDrawer)
                         .tabItem {
                             Image(systemName: "calendar")
                         }
                         .tag(2)
-                    SearchView()
+                    SearchView(showDrawer: $showDrawer)
                         .tabItem {
                             Image(systemName: "magnifyingglass")
                         }
                         .tag(3)
-                    ToDoView()
+                    ToDoView(showDrawer: $showDrawer)
                         .tabItem {
                             Image(systemName: "list.clipboard")
                         }
                         .tag(4)
-                    ProfileView()
+                    ProfileView(showDrawer: $showDrawer)
                         .tabItem {
                             Image(systemName: "person")
                         }
                         .tag(5)
+                }
+                if showDrawer {
+                    ZStack {
+                        Color.black.opacity(0.3)
+                            .onTapGesture {
+                                showDrawer = false
+                            }
+                        HStack {
+                            VStack {
+                                Spacer()
+                                Text("Menu")
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
+                            .frame(width: (UIScreen.main.bounds.width * 2) / 3,height: UIScreen.main.bounds.height)
+                            .background(Color.BackgroundColor)
+                            Spacer()
+                        }
+                    }
                 }
             }
         }
